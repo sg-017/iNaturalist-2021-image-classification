@@ -32,3 +32,15 @@ https://www.overleaf.com/1795634125pdvrvxgzhgcn#c7d8f7
     - API-Net
     - PMG
 
+
+## References
+
+- **ResNet50**: [Hugging Face](https://huggingface.co/microsoft/resnet-50) | [Paper](https://arxiv.org/abs/1512.03385)
+- **ConvNeXt-Tiny**: [Code](https://github.com/facebookresearch/ConvNeXt) | [Paper](https://arxiv.org/abs/2201.03545)
+- **Grad-CAM**: [Code](https://github.com/jacobgil/pytorch-grad-cam) | [Paper](https://arxiv.org/abs/1610.02391)
+- **CBAM**: [Code](https://github.com/Jongchan/attention-module) | [Paper](https://arxiv.org/abs/1807.06521)
+- **MC-Loss**: [Code](https://github.com/PRIS-CV/Mutual-Channel-Loss) | [Paper](https://arxiv.org/abs/2002.04264)
+- **CBP**: [Code](https://github.com/gdlg/pytorch_compact_bilinear_pooling) | [Paper](https://arxiv.org/abs/1511.06062)
+- **API-Net**: [Code](https://github.com/mul-hjh/API-Net) | [Paper](https://arxiv.org/abs/1904.09691)
+- **PMG**: [Code](https://github.com/PRIS-CV/PMG-Progressive-Multi-Granularity-Training) | [Paper](https://arxiv.org/abs/2003.09150)
+
