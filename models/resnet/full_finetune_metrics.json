@@ -1,0 +1,22 @@
+{
+  "test_top1_accuracy": 0.6726,
+  "test_top5_accuracy": 0.8584,
+  "overall_accuracy": 0.6726,
+  "macro_precision": 0.7097590345444911,
+  "macro_recall": 0.6725999999999999,
+  "macro_f1": 0.6721900212971075,
+  "test_seconds": 29.523516106999523,
+  "test_images": 5000,
+  "model": "ResNet50",
+  "method": "full_finetune",
+  "num_classes": 500,
+  "best_epoch": 4,
+  "best_validation_accuracy": 0.6672,
+  "training_seconds": 4954.502664842,
+  "learning_rate": 0.0001,
+  "epochs": 20,
+  "batch_size": 32,
+  "augmentation": false,
+  "seed": 42,
+  "device": "cuda"
+}
