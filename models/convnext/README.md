@@ -1,4 +1,14 @@
 # ConvNeXt-Tiny
+This model uses `convnext_tiny.fb_in22k` from the
+[timm library](https://github.com/huggingface/pytorch-image-models).
+
+For linear probing and full fine-tuning, the model starts from weights
+pretrained on ImageNet-22K. For training from scratch, the same
+ConvNeXt-Tiny architecture is used without pretrained weights.
+
+The specific timm model used in this project is available from: https://huggingface.co/timm/convnext_tiny.fb_in22k
+
+The original ConvNeXt implementation is available from: https://github.com/facebookresearch/ConvNeXt
 
 ## Structure
 
