@@ -78,6 +78,63 @@ python -m models.convnext.plot_training_metrics `
   --output-dir models/convnext/outputs/final_full_finetune_seed42
 ```
 
+## Command-line Arguments
+
+### Training
+
+- `--mode`: training setting: `scratch`, `linear_probe`, or `full_finetune`
+- `--dataset-dir`: path to the processed dataset
+- `--output-dir`: directory used to save the outputs
+- `--epochs`: maximum number of training epochs
+- `--freeze-epochs`: number of initial frozen backbone epochs for full fine-tuning
+- `--batch-size`: training batch size
+- `--num-workers`: number of DataLoader workers
+- `--backbone-lr`: learning rate for the ConvNeXt backbone
+- `--classifier-lr`: learning rate for the classifier
+- `--weight-decay`: AdamW weight decay
+- `--label-smoothing`: label smoothing used during training
+- `--warmup-epochs`: number of learning-rate warmup epochs
+- `--early-stopping-patience`: epochs without sufficient validation improvement before it terminates
+- `--early-stopping-min-delta`: minimum validation Top-1 improvement
+- `--seed`: random seed
+- `--device`: `auto`, `cpu`, or `cuda`
+- `--amp` / `--no-amp`: enable or disable automatic mixed precision
+
+### Evaluation
+
+- `--dataset-dir`: path to the processed dataset
+- `--checkpoint`: path to the checkpoint used for test evaluation
+- `--output-dir`: directory used to save test results
+- `--batch-size`: evaluation batch size
+- `--num-workers`: number of DataLoader workers
+- `--device`: `auto`, `cpu`, or `cuda`
+- `--top-confusions`: number of class-confusion pairs saved
+
+## Outputs
+
+Each training experiment produces:
+
+- `best_checkpoint.pt`: checkpoint with the highest validation Top-1 accuracy
+- `best_val_loss_checkpoint.pt`: checkpoint with the lowest validation loss
+- `latest_checkpoint.pt`: checkpoint from the final completed epoch
+- `config.json`: model, dataset and training configuration
+- `metrics.jsonl`: per-epoch training and validation metrics
+- `training_summary.json`: contains the best validation result, best epoch, runtime and early-stopping information
+- `training_validation_loss.png`: training and validation loss curves
+- `training_validation_top1.png`: training and validation Top-1 accuracy curves
+- `training_validation_top5.png`: training and validation Top-5 accuracy curves
+
+Test evaluation also produces:
+
+- `test_metrics.json`: overall test metrics and inference runtime
+- `test_predictions.csv`: prediction and confidence for each test image
+- `per_class_metrics.csv`: precision, recall, F1-score and support for each class
+- `top_confusions.csv`: most frequent directional class confusions
+- `confusion_matrix.csv`: full confusion matrix
+- `confusion_matrix.npy`: NumPy version of the confusion matrix
+- `normalized_confusion_matrix.png`: normalized confusion matrix visualization
+- `top_confused_pairs.png`: visualization of the most frequent class confusions
+
 ## Notes
 
 - Training uses label-smoothed cross-entropy.

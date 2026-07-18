@@ -21,8 +21,8 @@ https://www.overleaf.com/1795634125pdvrvxgzhgcn#c7d8f7
         - ImageNet-1K full fine-tuning
     - **(Rui)** ConvNeXt-Tiny
         - training from scratch
-        - ImageNet-21K pretrain linear-probing
-        - ImageNet-21K full fine-tuning
+        - ImageNet-22K pretrain linear-probing
+        - ImageNet-22K full fine-tuning
 - **(Lanli)** Explainability with Grad-CAM
 - **(Lanli)** Robustness
 - **(Shutian)** Fine-grained ResNet50
@@ -36,7 +36,7 @@ https://www.overleaf.com/1795634125pdvrvxgzhgcn#c7d8f7
 ## References
 
 - **ResNet50**: [Hugging Face](https://huggingface.co/microsoft/resnet-50) | [Paper](https://arxiv.org/abs/1512.03385)
-- **ConvNeXt-Tiny**: [Code](https://github.com/facebookresearch/ConvNeXt) | [Paper](https://arxiv.org/abs/2201.03545)
+- **ConvNeXt-Tiny**: [Code](https://huggingface.co/timm/convnext_tiny.fb_in22k) | [Paper](https://arxiv.org/abs/2201.03545)
 - **Grad-CAM**: [Code](https://github.com/jacobgil/pytorch-grad-cam) | [Paper](https://arxiv.org/abs/1610.02391)
 - **CBAM**: [Code](https://github.com/Jongchan/attention-module) | [Paper](https://arxiv.org/abs/1807.06521)
 - **MC-Loss**: [Code](https://github.com/PRIS-CV/Mutual-Channel-Loss) | [Paper](https://arxiv.org/abs/2002.04264)
