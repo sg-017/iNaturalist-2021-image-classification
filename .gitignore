@@ -1,0 +1,7 @@
+*.py[cod]
+.pytest_cache/
+.venv/
+*.pt
+*.pth
+*.ckpt
+*.tmp

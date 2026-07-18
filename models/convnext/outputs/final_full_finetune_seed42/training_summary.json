@@ -1,0 +1,15 @@
+{
+  "mode": "full_finetune",
+  "model_name": "convnext_tiny.fb_in22k",
+  "pretrained": true,
+  "completed_epochs": 19,
+  "requested_epochs": 30,
+  "stopped_early": true,
+  "early_stopping_patience": 5,
+  "early_stopping_min_delta": 0.001,
+  "best_val_top1": 0.884,
+  "best_val_epoch": 14,
+  "best_val_loss": 0.7250341099739075,
+  "validation_loss_definition": "ordinary_cross_entropy",
+  "total_training_runtime_seconds": 561.5407647000175
+}
