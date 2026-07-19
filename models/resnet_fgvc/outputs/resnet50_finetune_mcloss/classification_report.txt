@@ -1,0 +1,11 @@
+Test classification report
+test_loss: 1.310139
+num_samples: 5000
+top1_accuracy: 0.747000 (74.70%)
+top2_accuracy: 0.828800 (82.88%)
+top3_accuracy: 0.859600 (85.96%)
+top4_accuracy: 0.882200 (88.22%)
+top5_accuracy: 0.895000 (89.50%)
+macro_precision: 0.762301 (76.23%)
+macro_recall: 0.747000 (74.70%)
+macro_f1: 0.746152 (74.62%)
