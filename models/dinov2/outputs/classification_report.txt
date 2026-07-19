@@ -1,0 +1,12 @@
+DINOv2 ViT-S/14 test classification report
+num_samples: 5000
+num_classes: 500
+test_loss: 0.899369
+top1_accuracy: 0.890200 (89.02%)
+top2_accuracy: 0.933200 (93.32%)
+top3_accuracy: 0.949400 (94.94%)
+top4_accuracy: 0.955600 (95.56%)
+top5_accuracy: 0.960200 (96.02%)
+macro_precision: 0.898795 (89.88%)
+macro_recall: 0.890200 (89.02%)
+macro_f1: 0.889813 (88.98%)
