@@ -1,0 +1,34 @@
+{
+  "model": "bovw_svm",
+  "method": "Traditional ML",
+  "feature": "SIFT + BoVW",
+  "classifier": "Linear SVM",
+  "num_classes": 500,
+  "seed": 42,
+  "overall_accuracy": 0.0494,
+  "top1_accuracy": 0.0494,
+  "top5_accuracy": 0.1234,
+  "macro_precision": 0.047491614722591405,
+  "macro_recall": 0.049400000000000006,
+  "macro_f1": 0.03589902845844479,
+  "training_seconds": 7.7961517500225455,
+  "test_seconds": 0.006722041871398687,
+  "validation": {
+    "accuracy": 0.0492,
+    "macro_precision": 0.060737235015879375,
+    "macro_recall": 0.0492,
+    "macro_f1": 0.039529428120288375,
+    "top1_accuracy": 0.0492,
+    "top5_accuracy": 0.1246,
+    "prediction_time_seconds": 0.006665624910965562
+  },
+  "test": {
+    "accuracy": 0.0494,
+    "macro_precision": 0.047491614722591405,
+    "macro_recall": 0.049400000000000006,
+    "macro_f1": 0.03589902845844479,
+    "top1_accuracy": 0.0494,
+    "top5_accuracy": 0.1234,
+    "prediction_time_seconds": 0.006722041871398687
+  }
+}

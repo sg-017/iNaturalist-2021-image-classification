@@ -1,0 +1,34 @@
+{
+  "model": "lbp_hog_rf",
+  "method": "Traditional ML",
+  "feature": "LBP + HOG",
+  "classifier": "Random Forest",
+  "num_classes": 500,
+  "seed": 42,
+  "overall_accuracy": 0.0244,
+  "top1_accuracy": 0.0244,
+  "top5_accuracy": 0.0752,
+  "macro_precision": 0.017921583457913993,
+  "macro_recall": 0.024399999999999998,
+  "macro_f1": 0.018865586457353575,
+  "training_seconds": 1083.3947385421488,
+  "test_seconds": 2.5859796670265496,
+  "validation": {
+    "accuracy": 0.026,
+    "macro_precision": 0.018775094774336518,
+    "macro_recall": 0.026000000000000002,
+    "macro_f1": 0.019648949672747953,
+    "top1_accuracy": 0.026,
+    "top5_accuracy": 0.0818,
+    "prediction_time_seconds": 2.5332153339404613
+  },
+  "test": {
+    "accuracy": 0.0244,
+    "macro_precision": 0.017921583457913993,
+    "macro_recall": 0.024399999999999998,
+    "macro_f1": 0.018865586457353575,
+    "top1_accuracy": 0.0244,
+    "top5_accuracy": 0.0752,
+    "prediction_time_seconds": 2.5859796670265496
+  }
+}

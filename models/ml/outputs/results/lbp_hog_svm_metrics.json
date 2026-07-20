@@ -1,0 +1,34 @@
+{
+  "model": "lbp_hog_svm",
+  "method": "Traditional ML",
+  "feature": "LBP + HOG",
+  "classifier": "Linear SVM",
+  "num_classes": 500,
+  "seed": 42,
+  "overall_accuracy": 0.0252,
+  "top1_accuracy": 0.0252,
+  "top5_accuracy": 0.0852,
+  "macro_precision": 0.023052541417782263,
+  "macro_recall": 0.025200000000000004,
+  "macro_f1": 0.01989063566517122,
+  "training_seconds": 98.71601704112254,
+  "test_seconds": 0.03459924994967878,
+  "validation": {
+    "accuracy": 0.0292,
+    "macro_precision": 0.027644653920314545,
+    "macro_recall": 0.0292,
+    "macro_f1": 0.023609309092297536,
+    "top1_accuracy": 0.0292,
+    "top5_accuracy": 0.0846,
+    "prediction_time_seconds": 0.034947333158925176
+  },
+  "test": {
+    "accuracy": 0.0252,
+    "macro_precision": 0.023052541417782263,
+    "macro_recall": 0.025200000000000004,
+    "macro_f1": 0.01989063566517122,
+    "top1_accuracy": 0.0252,
+    "top5_accuracy": 0.0852,
+    "prediction_time_seconds": 0.03459924994967878
+  }
+}

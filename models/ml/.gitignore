@@ -1,0 +1,4 @@
+__pycache__/
+outputs/features/
+outputs/models/
+outputs/results/*_test_predictions.npz

@@ -1,0 +1,152 @@
+{
+  "gaussian_noise": {
+    "severity_1": {
+      "accuracy": 0.0468,
+      "macro_precision": 0.04757141247425206,
+      "macro_recall": 0.0468,
+      "macro_f1": 0.03520807260429604,
+      "test_time_seconds": 81.07620487501845
+    },
+    "severity_2": {
+      "accuracy": 0.0438,
+      "macro_precision": 0.04350726316189524,
+      "macro_recall": 0.0438,
+      "macro_f1": 0.03227619950474243,
+      "test_time_seconds": 89.10464537516236
+    },
+    "severity_3": {
+      "accuracy": 0.0382,
+      "macro_precision": 0.037564493787526264,
+      "macro_recall": 0.038200000000000005,
+      "macro_f1": 0.027630450126245754,
+      "test_time_seconds": 91.6558054999914
+    },
+    "severity_4": {
+      "accuracy": 0.0336,
+      "macro_precision": 0.03365926257114009,
+      "macro_recall": 0.03359999999999999,
+      "macro_f1": 0.024443855145324083,
+      "test_time_seconds": 89.87943395785987
+    }
+  },
+  "gaussian_blur": {
+    "severity_1": {
+      "accuracy": 0.0412,
+      "macro_precision": 0.04836737132599683,
+      "macro_recall": 0.0412,
+      "macro_f1": 0.030370594070082427,
+      "test_time_seconds": 72.25450062495656
+    },
+    "severity_2": {
+      "accuracy": 0.038,
+      "macro_precision": 0.043675608262276074,
+      "macro_recall": 0.038,
+      "macro_f1": 0.02846268973190267,
+      "test_time_seconds": 73.60391774983145
+    },
+    "severity_3": {
+      "accuracy": 0.0284,
+      "macro_precision": 0.02948307059024404,
+      "macro_recall": 0.028399999999999998,
+      "macro_f1": 0.019242418047557483,
+      "test_time_seconds": 71.75831645797007
+    },
+    "severity_4": {
+      "accuracy": 0.0242,
+      "macro_precision": 0.02772517509076809,
+      "macro_recall": 0.024200000000000003,
+      "macro_f1": 0.015826502916960042,
+      "test_time_seconds": 73.88808387494646
+    }
+  },
+  "motion_blur": {
+    "severity_1": {
+      "accuracy": 0.0456,
+      "macro_precision": 0.04530810093234718,
+      "macro_recall": 0.0456,
+      "macro_f1": 0.0329291959776084,
+      "test_time_seconds": 74.16672395798378
+    },
+    "severity_2": {
+      "accuracy": 0.0342,
+      "macro_precision": 0.03932837105381813,
+      "macro_recall": 0.0342,
+      "macro_f1": 0.02384022791206052,
+      "test_time_seconds": 71.84631162509322
+    },
+    "severity_3": {
+      "accuracy": 0.026,
+      "macro_precision": 0.026043203953367473,
+      "macro_recall": 0.026,
+      "macro_f1": 0.016984128404158225,
+      "test_time_seconds": 71.33401662507094
+    },
+    "severity_4": {
+      "accuracy": 0.0198,
+      "macro_precision": 0.023367662934595843,
+      "macro_recall": 0.019800000000000005,
+      "macro_f1": 0.013023077358590983,
+      "test_time_seconds": 101.2764232500922
+    }
+  },
+  "brightness_reduction": {
+    "severity_1": {
+      "accuracy": 0.0492,
+      "macro_precision": 0.046121612675618706,
+      "macro_recall": 0.0492,
+      "macro_f1": 0.03586796825793236,
+      "test_time_seconds": 74.6065957499668
+    },
+    "severity_2": {
+      "accuracy": 0.0484,
+      "macro_precision": 0.04628733770024162,
+      "macro_recall": 0.048400000000000006,
+      "macro_f1": 0.03540639056773855,
+      "test_time_seconds": 75.14236637507565
+    },
+    "severity_3": {
+      "accuracy": 0.0468,
+      "macro_precision": 0.039539210916522266,
+      "macro_recall": 0.046799999999999994,
+      "macro_f1": 0.033427634791808075,
+      "test_time_seconds": 72.6973337919917
+    },
+    "severity_4": {
+      "accuracy": 0.0196,
+      "macro_precision": 0.011272707059156546,
+      "macro_recall": 0.019600000000000003,
+      "macro_f1": 0.012366981347751103,
+      "test_time_seconds": 72.3755572498776
+    }
+  },
+  "jpeg_compression": {
+    "severity_1": {
+      "accuracy": 0.0466,
+      "macro_precision": 0.047143622759703824,
+      "macro_recall": 0.0466,
+      "macro_f1": 0.03542836088068795,
+      "test_time_seconds": 77.94522270793095
+    },
+    "severity_2": {
+      "accuracy": 0.0462,
+      "macro_precision": 0.04291325730042288,
+      "macro_recall": 0.046200000000000005,
+      "macro_f1": 0.03341284702820469,
+      "test_time_seconds": 78.41520575014874
+    },
+    "severity_3": {
+      "accuracy": 0.0464,
+      "macro_precision": 0.050609259187160735,
+      "macro_recall": 0.0464,
+      "macro_f1": 0.03523010294750389,
+      "test_time_seconds": 78.98416583309881
+    },
+    "severity_4": {
+      "accuracy": 0.0456,
+      "macro_precision": 0.04396383128621142,
+      "macro_recall": 0.04560000000000001,
+      "macro_f1": 0.034161103067899865,
+      "test_time_seconds": 76.26289787492715
+    }
+  }
+}
