@@ -1,0 +1,13 @@
+{
+  "mode": "full_finetune",
+  "model_name": "convnext_tiny.fb_in22k",
+  "checkpoint": "D:\\26T2\\project\\iNaturalist-2021-image-classification\\models\\convnext\\outputs\\final_full_finetune_seed42\\best_checkpoint.pt",
+  "dataset_dir": "D:\\26T2\\project\\iNaturalist-2021-image-classification\\dataset",
+  "robustness_dir": "D:\\26T2\\project\\iNaturalist-2021-image-classification\\dataset\\robustness_data",
+  "number_of_runs": 20,
+  "total_runtime_seconds": 1191.479228100001,
+  "batch_size": 64,
+  "num_workers": 0,
+  "device": "cuda",
+  "amp": true
+}

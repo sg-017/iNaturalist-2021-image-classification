@@ -102,15 +102,6 @@ python -m models.convnext.evaluate_robustness `
   --device cuda
 ```
 
-The evaluation produces:
-
-- `robustness_metrics.csv`
-- `robustness_metrics.json`
-- `robustness_run_metadata.json`
-
-The reported metrics include cross entropy loss, Top-1 accuracy, Top-5 accuracy, macro precision, macro recall, macro F1, inference time, and throughput.
-
-Note that Gaussian blur caused the largest reduction in classification performance, while brightness reduction had the smallest effect.
 
 ### Plot training curves
 
@@ -176,6 +167,16 @@ Test evaluation also produces:
 - `confusion_matrix.npy`: NumPy version of the confusion matrix
 - `normalized_confusion_matrix.png`: normalized confusion matrix visualization
 - `top_confused_pairs.png`: visualization of the most frequent class confusions
+
+Robustness evaluation produces:
+
+- `robustness_metrics.csv`
+- `robustness_metrics.json`
+- `robustness_run_metadata.json`
+
+The reported metrics include cross entropy loss, Top-1 accuracy, Top-5 accuracy, macro precision, macro recall, macro F1, inference time, and throughput.
+
+Note that Gaussian blur caused the largest reduction in classification performance, while brightness reduction had the smallest effect.
 
 ## Notes
 

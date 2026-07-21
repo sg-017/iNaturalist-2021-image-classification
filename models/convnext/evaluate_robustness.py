@@ -23,6 +23,8 @@ CSV_FIELDS = (
     "average_inference_time_per_image_seconds",
     "inference_throughput_images_per_second",
 )
+PER_CLASS_CSV_FIELDS = ("degradation", "severity", "class_id", 
+                        "precision", "recall", "f1_score", "support")
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -53,6 +55,20 @@ def write_results(output_dir: Path, rows: list[dict[str, Any]]) -> None:
     with (output_dir / "robustness_metrics.json").open("w", encoding="utf-8") as handle:
         json.dump(rows, handle, indent=2)
 
+def write_per_class_results(
+    output_dir: Path,
+    rows: list[dict[str, Any]],
+) -> None:
+    with (output_dir / "robustness_per_class_metrics.csv").open(
+        "w", newline="", encoding="utf-8"
+    ) as handle:
+        writer = csv.DictWriter(handle, fieldnames=PER_CLASS_CSV_FIELDS)
+        writer.writeheader()
+        writer.writerows(
+            {key: row[key] for key in PER_CLASS_CSV_FIELDS}
+            for row in rows
+        )
+
 def build_dataset(folder: Path, data_config: dict[str, Any]) -> ImageFolderWithPaths:
     transform = timm.data.create_transform(**data_config, is_training=False)
     dataset = ImageFolderWithPaths(folder, transform=transform)
@@ -66,7 +82,11 @@ def build_dataset(folder: Path, data_config: dict[str, Any]) -> ImageFolderWithP
         raise ValueError(f"{folder} must contain 10 images per class: {preview}")
     return dataset
 
-def macro_metrics(predictions: list[dict[str, Any]]) -> dict[str, float]:
+def classification_metrics(
+    predictions: list[dict[str, Any]],
+    degradation: str,
+    severity: int,
+) -> tuple[dict[str, float], list[dict[str, Any]]]:
     matrix = np.zeros((NUM_CLASSES, NUM_CLASSES), dtype=np.int64)
     true = np.fromiter((row["true_label"] for row in predictions), dtype=np.int64)
     pred = np.fromiter((row["predicted_label"] for row in predictions), dtype=np.int64)
@@ -83,11 +103,25 @@ def macro_metrics(predictions: list[dict[str, Any]]) -> dict[str, float]:
         where=(precision + recall) != 0,
     )
     active = support > 0
-    return {
+    macro = {
         "macro_precision": float(precision[active].mean()),
         "macro_recall": float(recall[active].mean()),
         "macro_f1": float(f1[active].mean()),
     }
+
+    per_class = [
+        {
+            "degradation": degradation,
+            "severity": severity,
+            "class_id": f"{class_idx:03d}",
+            "precision": float(precision[class_idx]),
+            "recall": float(recall[class_idx]),
+            "f1_score": float(f1[class_idx]),
+            "support": int(support[class_idx]),
+        }
+        for class_idx in range(NUM_CLASSES)
+    ]
+    return macro, per_class
 
 def main():
     args = parse_args()
@@ -124,6 +158,7 @@ def main():
     criterion = nn.CrossEntropyLoss()
     seed = int(run_config.get("arguments", {}).get("seed", 42)) + 2
     rows: list[dict[str, Any]] = []
+    per_class_rows: list[dict[str, Any]] = []
     started = time.perf_counter()
     total_runs = len(DEGRADATIONS) * len(SEVERITIES)
     for run, (degradation, severity) in enumerate(
@@ -145,14 +180,21 @@ def main():
         synch_device(device)
         metrics, predictions = evaluate(model, loader, criterion, device, amp_enabled, collect_predictions=True)
         synch_device(device)
+        macro, current_per_class = classification_metrics(
+            predictions,
+            degradation,
+            severity,
+        )
         row = {
             "degradation": degradation,
             "severity": severity,
             **metrics,
-            **macro_metrics(predictions),
+            **macro,
         }
         rows.append(row)
+        per_class_rows.extend(current_per_class)
         write_results(output_dir, rows)
+        write_per_class_results(output_dir, per_class_rows)
 
         summary_keys = ("degradation", "severity", "loss", "top1", "top5", "macro_f1")
         print(json.dumps({key: row[key] for key in summary_keys}, indent=2))
@@ -175,7 +217,8 @@ def main():
     with (output_dir / "robustness_run_metadata.json").open("w", encoding="utf-8") as handle:
         json.dump(metadata, handle, indent=2)
     print(f"\nAll {len(rows)} robustness evaluations are completed successfully now")
-    print(f"Results are saved: {output_dir / 'robustness_metrics.csv'}")
+    print(f"Summary results are saved: {output_dir / 'robustness_metrics.csv'}")
+    print(f"Per-class results are saved: {output_dir / 'robustness_per_class_metrics.csv'}")
 
 if __name__ == "__main__":
     main()
