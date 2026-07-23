@@ -72,13 +72,36 @@ python -m models.convnext.train_convnext `
   --device cuda
 ```
 
-### Evaluation
+### Normal Evaluation
 
 ```powershell
 python -m models.convnext.evaluate_convnext `
   --checkpoint models/convnext/outputs/final_full_finetune_seed42/best_checkpoint.pt `
   --device cuda
 ```
+### Robustness evaluation
+
+The ConvNeXt-Tiny full fine-tuning checkpoint was evaluated on five image degradations:
+
+- Gaussian noise
+- Gaussian blur
+- Motion blur
+- Brightness reduction
+- JPEG compression
+
+Each degradation contains four severity levels, therefore there are 20 robustness test sets. Each test set contains 5000 images across 500 classes.
+
+```powershell
+python -m models.convnext.evaluate_robustness `
+  --dataset-dir dataset `
+  --robustness-dir dataset/robustness_data `
+  --checkpoint models/convnext/outputs/final_full_finetune_seed42/best_checkpoint.pt `
+  --output-dir models/convnext/outputs/final_full_finetune_seed42/robustness `
+  --batch-size 64 `
+  --num-workers 0 `
+  --device cuda
+```
+
 
 ### Plot training curves
 
@@ -144,6 +167,16 @@ Test evaluation also produces:
 - `confusion_matrix.npy`: NumPy version of the confusion matrix
 - `normalized_confusion_matrix.png`: normalized confusion matrix visualization
 - `top_confused_pairs.png`: visualization of the most frequent class confusions
+
+Robustness evaluation produces:
+
+- `robustness_metrics.csv`
+- `robustness_metrics.json`
+- `robustness_run_metadata.json`
+
+The reported metrics include cross entropy loss, Top-1 accuracy, Top-5 accuracy, macro precision, macro recall, macro F1, inference time, and throughput.
+
+Note that Gaussian blur caused the largest reduction in classification performance, while brightness reduction had the smallest effect.
 
 ## Notes
 
