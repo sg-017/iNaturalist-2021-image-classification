@@ -103,7 +103,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--pmg-pretrained-checkpoint",
         type=Path,
-        default=Path("/srv/scratch/z5456014/coursework/outputs/resnet-pmg-448/best.pt"),
+        default=None,
         help=(
             "Initialize the hybrid backbone and all PMG heads from a "
             "resnet-pmg.py checkpoint; GAP/iSQRT-COV modules stay new"
@@ -115,7 +115,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--ensemble-only",
         action="store_true",
-        help="Ensemble resnet-pmg.py and resnet-cov-gap.py checkpoints",
+        help="Ensemble resnet_pmg.py and resnet_isqrt-cov.py checkpoints",
     )
     parser.add_argument("--pmg-checkpoint", type=Path, default=None)
     parser.add_argument("--cov-checkpoint", type=Path, default=None)
@@ -496,7 +496,7 @@ class PMGClassifier(nn.Module):
 
 
 class ResNet50GAPISqrtCovClassifier(nn.Module):
-    """Checkpoint-compatible copy of the model in resnet-cov-gap.py."""
+    """Checkpoint-compatible copy of the model in resnet_isqrt-cov.py."""
 
     def __init__(
         self,

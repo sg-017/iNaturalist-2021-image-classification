@@ -39,10 +39,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--data-dir", type=Path, default=None)
     parser.add_argument("--output-dir", type=Path, default=None)
     parser.add_argument("--resnet-api-checkpoint", type=Path, default=None)
-    parser.add_argument("--cbp-checkpoint", type=Path, default=None)
+    parser.add_argument("--resnet-cbp-checkpoint", type=Path, default=None)
     parser.add_argument("--resnet-api-cbp-checkpoint", type=Path, default=None)
     parser.add_argument("--resnet-pmg-checkpoint", type=Path, default=None)
-    parser.add_argument("--resnet-cov-gap-checkpoint", type=Path, default=None)
+    parser.add_argument("--resnet-isqrtcov-checkpoint", type=Path, default=None)
 
     parser.add_argument("--num-classes", type=int, default=500)
     parser.add_argument("--eval-batch-size", type=int, default=32)
