@@ -1,0 +1,5 @@
+model_key,checkpoint,checkpoint_exists,target_layer,device,samples_requested,cams_completed,cams_failed,status,error
+resnet50_full_finetune,models/resnet/results/full_finetune/best_model.pth,True,model.layer4[-1],cpu,15,24,1,completed_with_empty_cams,1 target(s) produced an empty positive Grad-CAM. They are kept as failed result rows.
+resnet50_scratch,models/resnet/results/scratch/best_model.pth,True,model.layer4[-1],cpu,15,20,7,completed_with_empty_cams,7 target(s) produced an empty positive Grad-CAM. They are kept as failed result rows.
+convnext_full_finetune,models/convnext/final_full_finetune_seed42/best_checkpoint.pt,True,model.stages[-1].blocks[-1],cpu,15,25,0,completed,
+resnet50_fgvc_pmg_isqrtcov,models/resnet_fgvc/resnet-pmg-isqrtcov/best.pt,True,model.backbone.encoder.stages[-1].layers[-1],cpu,15,24,0,completed,
