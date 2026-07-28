@@ -44,7 +44,7 @@ https://www.overleaf.com/1795634125pdvrvxgzhgcn#c7d8f7
 - **CBAM**: [Code](https://github.com/Jongchan/attention-module) | [Paper](https://arxiv.org/abs/1807.06521)
 - **MC-Loss**: [Code](https://github.com/PRIS-CV/Mutual-Channel-Loss) | [Paper](https://arxiv.org/abs/2002.04264)
 - **CBP**: [Code](https://github.com/gdlg/pytorch_compact_bilinear_pooling) | [Paper](https://arxiv.org/abs/1511.06062)
-- **API-Net**: [Code](https://github.com/mul-hjh/API-Net) | [Paper](https://arxiv.org/abs/1904.09691)
-- **PMG**: [Code](https://github.com/PRIS-CV/PMG-Progressive-Multi-Granularity-Training) | [Paper](https://arxiv.org/abs/2003.09150)
+- **API-Net**: [Code](https://github.com/mul-hjh/API-Net) | [Paper](https://arxiv.org/abs/2002.10191)
+- **PMG**: [Code](https://github.com/PRIS-CV/PMG-Progressive-Multi-Granularity-Training) | [Paper](https://arxiv.org/abs/2003.03836)
 - **iSQRT-COV**: [Code](https://github.com/jiangtaoxie/fast-MPN-COV) | [Paper](https://arxiv.org/abs/1712.01034)
 
