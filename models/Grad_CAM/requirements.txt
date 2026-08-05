@@ -1,9 +1,0 @@
-torch
-torchvision
-timm
-transformers
-grad-cam
-pandas
-matplotlib
-pillow
-nbformat
