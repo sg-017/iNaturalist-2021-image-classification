@@ -1,0 +1,16 @@
+sample_id,sample_group,image_path,anchor_true_label,anchor_predicted_label,anchor_confidence,anchor_correct
+sample_01,high_confidence_correct,test/432/2769611_5e85a717-bbe4-4692-8b63-ae7bd8e53134.jpg,432,432,0.9738727807998656,True
+sample_02,high_confidence_correct,test/225/2713607_ab66d426-09cf-4c60-93c1-498d8359159c.jpg,225,225,0.972633183002472,True
+sample_03,high_confidence_correct,test/341/2715574_701a470f-9326-480e-a309-b5a827298be5.jpg,341,341,0.967340886592865,True
+sample_04,high_confidence_correct,test/042/2770105_0b52ebec-ec43-4e0a-98e7-cec35172b6b4.jpg,42,42,0.9644150137901306,True
+sample_05,high_confidence_correct,test/432/2724934_deed1395-669b-45a1-9142-62ba567ed619.jpg,432,432,0.9639039039611816,True
+sample_06,incorrect,test/224/2738660_0f08381b-4dc0-49b2-8b8c-b78902ed2e93.jpg,224,186,0.4216310083866119,False
+sample_07,incorrect,test/126/2768775_ba3bb283-7ed8-477c-a4e2-edd556e25922.jpg,126,276,0.1839146316051483,False
+sample_08,incorrect,test/372/2701912_d86d7684-d24f-4013-8fc7-1364d0c54228.jpg,372,376,0.1747132390737533,False
+sample_09,incorrect,test/354/2766307_a8951a6b-2f13-4713-a4fe-a348a99ac750.jpg,354,23,0.0695400163531303,False
+sample_10,incorrect,test/497/2753795_7fc20046-365f-44fa-a07e-1375c22eb4f4.jpg,497,496,0.0435052439570426,False
+sample_11,low_confidence_difficult,test/166/2732378_f08aebf2-10c1-4bab-94f8-4bc2c7770a31.jpg,166,222,0.0126372901722788,False
+sample_12,low_confidence_difficult,test/493/2689025_5cde2542-983b-4f81-aee8-c9d24b3ccb23.jpg,493,271,0.0177744813263416,False
+sample_13,low_confidence_difficult,test/252/2735322_f1006bbe-b632-4e68-9a7c-d646f1b0705a.jpg,252,322,0.0192787237465381,False
+sample_14,low_confidence_difficult,test/410/2715993_7aa37e28-6d7f-4b58-8556-43e2f40143f3.jpg,410,161,0.0205729808658361,False
+sample_15,low_confidence_difficult,test/143/2698748_2aed09ed-b0c6-4252-93dd-6452509a3cde.jpg,143,22,0.0229350700974464,False

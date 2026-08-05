@@ -1,0 +1,9 @@
+{
+  "mode": "full",
+  "device": "cpu",
+  "selected_samples": 15,
+  "result_rows": 101,
+  "completed_cams": 93,
+  "failed_cams": 8,
+  "results_dir": "results/grad_cam"
+}
