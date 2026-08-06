@@ -1,0 +1,14 @@
+{
+  "mode": "full",
+  "profile": "extended",
+  "device": "cpu",
+  "selected_samples": 30,
+  "samples_per_group": 10,
+  "result_rows": 203,
+  "completed_cams": 189,
+  "failed_cams": 14,
+  "predicted_true_pairs": 70,
+  "deletion_fraction": 0.2,
+  "deletion_metrics_enabled": true,
+  "results_dir": "results/grad_cam_explainability_extended"
+}

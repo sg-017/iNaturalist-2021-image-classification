@@ -32,7 +32,7 @@ The workflow expects:
 
 1. `dataset/processed_dataset/test.json` and its test images;
 2. the model checkpoints listed in `get_model_inventory()`;
-3. `results/convnext_full_finetune_seed42/test_predictions.csv`, which is used to choose a reproducible shared set of 15 examples.
+3. the prediction CSVs under `results/` used by the selected sampling profile.
 
 Large checkpoints are normally not committed. Train/evaluate the corresponding model first, copy each checkpoint to the path listed below, or update the inventory paths to match your storage layout:
 
@@ -44,6 +44,9 @@ results/resnet50_finetune_pmg_isqrtcov_from_pmg/best.pt
 ```
 
 The checkpoint must match the architecture and preprocessing configuration used by its training script.
+For compatibility with existing local experiments, the inventory also checks the
+legacy checkpoint locations under `models/` when a checkpoint is not present in
+the new `results/` location.
 
 ## Run the workflow
 
@@ -69,13 +72,31 @@ python explainability/run_grad_cam.py \
 
 `--device` accepts `cpu`, `cuda`, `mps`, or `auto`. Models whose checkpoints are missing are recorded as skipped instead of stopping all other models.
 
+Run the extended 30-image study with quantitative faithfulness analysis:
+
+```bash
+python explainability/run_grad_cam.py \
+  --mode full \
+  --profile extended \
+  --samples-per-group 10 \
+  --deletion-fraction 0.20 \
+  --device auto
+```
+
+The extended profile writes to `results/grad_cam_explainability_extended/` by
+default. Use `--profile baseline` for the original reproducible 15-image study.
+
 ## Sampling and CAM targets
 
-The ConvNeXt prediction file deterministically selects five examples from each of three groups using seed 42:
+The baseline profile uses the ConvNeXt prediction file to deterministically select five examples from each of three groups using seed 42:
 
 - high-confidence correct predictions;
 - incorrect predictions;
 - low-confidence difficult examples.
+
+The extended profile jointly uses ConvNeXt, DINOv2, and PMG+iSQRT-COV predictions
+to select consensus-correct, recurring confusable-error, and consensus-difficult
+groups. By default, it selects ten images per group.
 
 For every selected image, Grad-CAM targets the model's predicted class. For an incorrect prediction, a second CAM targets the ground-truth class. This permits both cross-model comparisons and predicted-versus-true-class comparisons.
 
@@ -97,7 +118,10 @@ results/grad_cam_explainability/
 
 Per-model figures contain the original input, heatmap, and overlay. Comparison figures cover shared examples, correct versus incorrect predictions, predicted-class versus true-class targets, and scratch versus pretrained ResNet-50.
 
+The extended workflow additionally writes predicted-versus-true CAM IoU,
+salient-region deletion results with shifted-mask controls, per-model and
+per-group summary CSVs, and `grad_cam_quantitative_summary.png`.
+
 ## Notebook
 
 Open `grad_cam_analysis.ipynb` after configuring the same environment. Run the notebook with the repository root as its working directory so that imports and relative dataset/result paths resolve consistently.
-
