@@ -39,12 +39,12 @@ We use the iNaturalist2021-mini version, which provides a balanced subset with 6
 
 ## Results
 
-| Model | Setting | Pretrain | Top-1↑ | Top-5↑ | Precision↑ | Recall↑ | Macro-F1↑ |
-| --- | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Model | Setting | Pretrain | Acc@1 | Acc@5 | Precision | Recall | F1 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | **Traditional ML** |  |  |  |  |  |  |  |
-| LBP + HOG + RF | Default | None | 2.44% | 7.52% | 1.79% | 2.44% | 1.89% |
-| LBP + HOG + SVM | Default | None | 2.52% | 8.52% | 2.31% | 2.52% | 1.99% |
-| BoW-SIFT + SVM | Default | None | 4.94% | 12.34% | 4.75% | 4.94% | 3.59% |
+| RF (LBP + HOG) | Default | None | 2.44% | 7.52% | 1.79% | 2.44% | 1.89% |
+| SVM (LBP + HOG) | Default | None | 2.52% | 8.52% | 2.31% | 2.52% | 1.99% |
+| SVM (BoW-SIFT) | Default | None | 4.94% | 12.34% | 4.75% | 4.94% | 3.59% |
 | **ResNet** |  |  |  |  |  |  |  |
 | ResNet-50 | Training from scratch | Random | 19.80% | 41.62% | 23.92% | 19.80% | 19.20% |
 | ResNet-50 | Linear probing | ImageNet-1K | 59.76% | 81.58% | 62.07% | 59.76% | 59.63% |
